@@ -1,22 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ester</title>
-  <style>
-    body { margin: 0; font-family: Arial; background: #0a0a23; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
-    img { width: 300px; animation: flutuar 4s ease-in-out infinite; }
-    @keyframes flutuar {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-    input, button { margin-top: 10px; padding: 10px; border-radius: 5px; }
-  </style>
 </head>
 <body>
   <h1>Olá, sou a Ester!</h1>
-  <img src="https://i.imgur.com/bWlX0fu.png" alt="Avatar Ester" />
+  <img src="https://i.imgur.com/bMxkcdT.png" alt="Avatar Ester" />
   <input type="text" id="mensagem" placeholder="Fala comigo..." />
   <button onclick="enviar()">Enviar</button>
   <p id="resposta"></p>
@@ -24,10 +13,10 @@
   <script>
     async function enviar() {
       const msg = document.getElementById('mensagem').value;
-      const resposta = await fetch("http://localhost:8000/mensagem", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        "https://ester-backend.otokos.repl.co/mensagem"
+      const resposta = await fetch(https://e2461409-1154-4123-93e5-ee6e52f4557c-00-14p0s3pfxdgnv.riker.replit.dev//mensagem', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mensagem: msg })
       });
       const dados = await resposta.json();
       document.getElementById('resposta').innerText = "Ester: " + dados.resposta;
