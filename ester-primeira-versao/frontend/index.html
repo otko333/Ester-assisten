@@ -27,7 +27,7 @@
       const resposta = await fetch("http://localhost:8000/mensagem", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({mensagem: msg})
+        "https://ester-backend.otokos.repl.co/mensagem"
       });
       const dados = await resposta.json();
       document.getElementById('resposta').innerText = "Ester: " + dados.resposta;
